@@ -1,12 +1,12 @@
 class Autopilot < Formula
   desc "Declarative macOS GUI test driver via the Accessibility API"
   homepage "https://github.com/jschwefel-CBB/autopilot"
-  version "0.0.0"
+  version "1.0.0"
   license "MIT"
 
   on_arm do
-    url "https://github.com/jschwefel-CBB/autopilot/releases/download/v#{version}/autopilot-#{version}-arm64.tar.gz"
-    sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+    url "https://github.com/jschwefel-CBB/autopilot/releases/download/v1.0.0/autopilot-1.0.0-arm64.tar.gz"
+    sha256 "7832caa6764b8eea4684b4a920641d41cbad9f6ac8bb4fdc8bf95eebbde4a636"
   end
 
   on_intel do

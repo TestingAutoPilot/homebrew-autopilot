@@ -1,12 +1,12 @@
 class Autopilot < Formula
   desc "Declarative macOS GUI test driver via the Accessibility API"
   homepage "https://github.com/jschwefel-CBB/autopilot-macos"
-  version "3.1.0"
+  version "3.1.1"
   license "MIT"
 
   on_arm do
-    url "https://github.com/jschwefel-CBB/autopilot-macos/releases/download/v3.1.0/autopilot-3.1.0-arm64.tar.gz"
-    sha256 "7343809f8ccaef5191c60ad954a2545b809175656b84d9f46c30880114c56755"
+    url "https://github.com/jschwefel-CBB/autopilot-macos/releases/download/v3.1.1/autopilot-3.1.1-arm64.tar.gz"
+    sha256 "c5efe4d8a7741a53469dcdd47d1750ad68e3102abbee509a1a805bc03e5ad42c"
   end
 
   def install

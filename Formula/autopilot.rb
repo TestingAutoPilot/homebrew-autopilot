@@ -1,12 +1,12 @@
 class Autopilot < Formula
   desc "Declarative macOS GUI test driver via the Accessibility API"
   homepage "https://github.com/jschwefel-CBB/autopilot-macos"
-  version "3.1.1"
+  version "3.1.2"
   license "MIT"
 
   on_arm do
-    url "https://github.com/jschwefel-CBB/autopilot-macos/releases/download/v3.1.1/autopilot-3.1.1-arm64.tar.gz"
-    sha256 "c5efe4d8a7741a53469dcdd47d1750ad68e3102abbee509a1a805bc03e5ad42c"
+    url "https://github.com/jschwefel-CBB/autopilot-macos/releases/download/v3.1.2/autopilot-3.1.2-arm64.tar.gz"
+    sha256 "d13f0d72109a39d0d7ff144dfa2bdcecfa202e2d6f9214f3f45dd8479f2eb36e"
   end
 
   def install
@@ -16,6 +16,10 @@ class Autopilot < Formula
     # binary — FileDragSource locates it as AutopilotDragSource.app alongside
     # the CLI. Install the whole .app bundle into bin.
     bin.install "AutopilotDragSource.app"
+    # Ship the user-facing docs into share/doc/autopilot so `autopilot docs`
+    # finds them (it looks for share/doc/autopilot next to the binary) and
+    # `brew --prefix autopilot` / `brew home` expose them.
+    doc.install Dir["docs/*"]
   end
 
   def caveats
@@ -29,6 +33,12 @@ class Autopilot < Formula
       AutopilotDragSource.app helper installed alongside `autopilot`.
 
       Run `autopilot doctor` to verify permissions.
+
+      Documentation is installed with the formula:
+        autopilot docs            # list the bundled docs
+        autopilot docs manual     # print the full user manual
+        autopilot docs authoring  # how to write a test plan
+      or browse them at #{HOMEBREW_PREFIX}/share/doc/autopilot.
     EOS
   end
 
